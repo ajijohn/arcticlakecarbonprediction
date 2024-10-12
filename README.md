@@ -69,8 +69,8 @@ Installation
 
 	1.	Clone the Repository
 
-git clone https://github.com/yourusername/Arctic-Lakes-Carbon-Prediction.git
-cd Arctic-Lakes-Carbon-Prediction
+git clone https://github.com/ajijohn/arcticlakecarbonprediction.git
+cd arcticlakecarbonprediction
 
 
 	2.	Create a Virtual Environment (Optional)
@@ -150,8 +150,6 @@ Methodology
 1. NDVI Calculation
 
 NDVI is calculated using the formula:
-
-￼
 
 	•	Purpose: NDVI indicates the presence and condition of vegetation.
 	•	Implementation: The calculate_ndvi.py script reads the red and NIR bands and computes NDVI for each pixel.
