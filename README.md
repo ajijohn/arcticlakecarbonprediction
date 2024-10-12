@@ -1,8 +1,8 @@
-Arctic Lakes Carbon Prediction Project
+# Arctic Lakes Carbon Prediction Project
 
 Welcome to the Arctic Lakes Carbon Prediction Project! This project aims to estimate the carbon potential of Arctic lakes by analyzing satellite imagery and calculating the Normalized Difference Vegetation Index (NDVI). By correlating NDVI values with biomass and carbon stock estimations, we can better understand carbon dynamics in these critical ecosystems.
 
-Table of Contents
+## Table of Contents
 
 	•	Introduction
 	•	Project Structure
@@ -17,7 +17,7 @@ Table of Contents
 	•	License
 	•	Contact
 
-Introduction
+## Introduction
 
 Arctic lakes play a significant role in the global carbon cycle, especially in the context of climate change and permafrost thaw. This project provides tools and scripts to:
 
@@ -26,7 +26,7 @@ Arctic lakes play a significant role in the global carbon cycle, especially in t
 	•	Convert biomass estimates to carbon stock.
 	•	Visualize and analyze the spatial distribution of carbon potential.
 
-Project Structure
+## Project Structure
 
 Arctic-Lakes-Carbon-Prediction/
 ├── data/
@@ -45,7 +45,7 @@ Arctic-Lakes-Carbon-Prediction/
 ├── requirements.txt
 └── LICENSE
 
-Features
+## Features
 
 	•	NDVI Calculation: Compute NDVI from red and near-infrared (NIR) satellite imagery bands.
 	•	Biomass Estimation: Apply empirical models to estimate vegetation biomass from NDVI.
@@ -53,7 +53,7 @@ Features
 	•	Data Visualization: Generate maps and plots to visualize NDVI and carbon distribution.
 	•	Scalability: Process large datasets and handle multiple satellite images.
 
-Requirements
+## Requirements
 
 	•	Python 3.7 or higher
 	•	Libraries:
@@ -65,7 +65,7 @@ Requirements
 	•	Satellite Imagery:
 	•	Access to red and NIR bands from satellite data (e.g., Landsat 8, Sentinel-2)
 
-Installation
+## Installation
 
 	1.	Clone the Repository
 ``` 
@@ -73,19 +73,21 @@ git clone https://github.com/ajijohn/arcticlakecarbonprediction.git
 cd arcticlakecarbonprediction
 ```
 
-	2.	Create a Virtual Environment (Optional)
+## Create a Virtual Environment (Optional)
 
+``` 
 python -m venv venv
 source venv/bin/activate  # On Windows use venv\Scripts\activate
-
+```
 
 	3.	Install Dependencies
 
+``` 
 pip install -r requirements.txt
+```
 
 
-
-Usage
+## Usage
 
 1. Prepare the Data
 
@@ -97,8 +99,9 @@ Usage
 
 Run the NDVI calculation script:
 
+``` 
 python scripts/calculate_ndvi.py --red data/raw/red_band.tif --nir data/raw/nir_band.tif --output data/processed/ndvi.tif
-
+```
 	•	Arguments:
 	•	--red: Path to the red band image.
 	•	--nir: Path to the NIR band image.
@@ -108,8 +111,9 @@ python scripts/calculate_ndvi.py --red data/raw/red_band.tif --nir data/raw/nir_
 
 Run the carbon estimation script:
 
+``` 
 python scripts/estimate_carbon.py --ndvi data/processed/ndvi.tif --output data/processed/carbon_stock.tif
-
+```
 	•	Arguments:
 	•	--ndvi: Path to the NDVI image.
 	•	--output: Path to save the carbon stock output.
@@ -119,11 +123,11 @@ python scripts/estimate_carbon.py --ndvi data/processed/ndvi.tif --output data/p
 	•	Use the provided Jupyter Notebook notebooks/analysis.ipynb to visualize and analyze the results.
 	•	Launch Jupyter Notebook:
 
+``` 
 jupyter notebook notebooks/analysis.ipynb
+```
 
-
-
-Data Acquisition
+## Data Acquisition
 
 Satellite Data Sources
 
@@ -136,7 +140,7 @@ Satellite Data Sources
 	•	Red Band: Band 4
 	•	NIR Band: Band 8
 
-Preprocessing Steps
+## Preprocessing Steps
 
 	•	Ensure Spatial Alignment:
 	•	Bands must be co-registered and have the same spatial resolution.
@@ -145,7 +149,7 @@ Preprocessing Steps
 	•	Data Formats:
 	•	Supported formats include GeoTIFF and other raster data formats compatible with rasterio.
 
-Methodology
+## Methodology
 
 1. NDVI Calculation
 
@@ -163,10 +167,8 @@ NDVI is calculated using the formula:
 
 3. Carbon Stock Calculation
 
-	•	Conversion:
-	•	Carbon Stock = Biomass × Carbon Fraction
-	•	Carbon Fraction:
-	•	Typically around 0.47 (i.e., 47% of biomass is carbon).
+	•	Conversion: Carbon Stock = Biomass × Carbon Fraction
+	•	Carbon Fraction: Typically around 0.47 (i.e., 47% of biomass is carbon).
 
 4. Data Visualization
 
@@ -174,7 +176,7 @@ NDVI is calculated using the formula:
 	•	Generate spatial maps of NDVI and carbon stock.
 	•	Analyze the spatial distribution and identify areas with high carbon potential.
 
-Results
+## Results
 
 	•	NDVI Maps:
 	•	Located in results/ndvi_maps/
@@ -183,39 +185,38 @@ Results
 	•	Analysis Reports:
 	•	Findings and insights documented in notebooks/analysis.ipynb
 
-Contributing
+## Contributing
 
 We welcome contributions from the community! If you’d like to contribute:
 
 	1.	Fork the Repository
 	2.	Create a Feature Branch
-
+``` 
 git checkout -b feature/your-feature-name
-
+``` 
 
 	3.	Commit Your Changes
-
+``` 
 git commit -m "Add your message here"
-
+``` 
 
 	4.	Push to Your Fork
-
+``` 
 git push origin feature/your-feature-name
-
+``` 
 
 	5.	Create a Pull Request
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact
+## Contact
 
-	•	Project Maintainer: Your Name
-	•	Email: your.email@example.com
-	•	GitHub: yourusername
+	•	Project Maintainer:  Aji John
+	•	GitHub: ajijohn
 
-Acknowledgments
+## Acknowledgments
 
 	•	Data Providers:
 	•	NASA
@@ -225,7 +226,7 @@ Acknowledgments
 	•	Raynolds, M. K., et al. (2012). “A new estimate of tundra-biome phytomass from trans-Arctic field data and AVHRR NDVI.” Remote Sensing Letters.
 	•	Mishra, U., & Riley, W. J. (2012). “Alaska carbon stocks: spatial variability and dependence on environmental factors.” Biogeosciences.
 
-Troubleshooting
+## Troubleshooting
 
 	•	Common Issues:
 	•	Module Not Found: Ensure all dependencies are installed via pip install -r requirements.txt.
@@ -235,7 +236,7 @@ Troubleshooting
 	•	Open an issue on GitHub for assistance.
 	•	Consult the documentation of the libraries used.
 
-Future Work
+## Future Work
 
 	•	Integration of Machine Learning Models:
 	•	Implement advanced models for biomass estimation.
@@ -244,4 +245,4 @@ Future Work
 	•	Incorporate Belowground Biomass:
 	•	Extend the methodology to estimate total ecosystem carbon.
 
-Thank you for your interest in the Arctic Lakes Carbon Prediction Project! Together, we can enhance our understanding of carbon dynamics in Arctic ecosystems.
+Thank you for your interest in the Arctic Lakes Carbon Prediction Project.
