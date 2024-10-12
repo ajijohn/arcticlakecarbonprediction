@@ -27,8 +27,8 @@ Arctic lakes play a significant role in the global carbon cycle, especially in t
 	•	Visualize and analyze the spatial distribution of carbon potential.
 
 ## Project Structure
-
-Arctic-Lakes-Carbon-Prediction/
+``` 
+arcticlakecarbonprediction/
 ├── data/
 │   ├── raw/
 │   └── processed/
@@ -44,6 +44,7 @@ Arctic-Lakes-Carbon-Prediction/
 ├── README.md
 ├── requirements.txt
 └── LICENSE
+```
 
 ## Features
 
