@@ -68,10 +68,10 @@ Requirements
 Installation
 
 	1.	Clone the Repository
-
+``` 
 git clone https://github.com/ajijohn/arcticlakecarbonprediction.git
 cd arcticlakecarbonprediction
-
+```
 
 	2.	Create a Virtual Environment (Optional)
 
