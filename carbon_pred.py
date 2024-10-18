@@ -3,8 +3,8 @@ import rasterio
 import matplotlib.pyplot as plt
 
 # Paths to NDVI data and output files
-ndvi_path = 'ndvi_output.tif'
-carbon_output_path = 'carbon_potential.tif'
+ndvi_path = 'test\\ndvi_eastern-WA.tif'
+carbon_output_path = 'test\\carbon_potential.tif'
 
 # Biomass estimation model coefficients (example values)
 # Replace these with values derived from relevant studies or field data
