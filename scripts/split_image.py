@@ -5,17 +5,17 @@ import cv2 as cv
 from PIL import Image
 import matplotlib.pyplot as plt
 
-image_path = 'test/sentinel2_visual.tif'
-output_dir = 'newdata/images' 
+image_path = "../test/sentinel2_visual.tif"
+output_dir = "../newdata/images"
 SIZE = 128
-COUNT = 400
+COUNT = 800
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
 # Load the image
 image = Image.open(image_path)
-image = image.convert('RGB')  # Ensure image is in RGB format
+image = image.convert("RGB")  # Ensure image is in RGB format
 image_np = np.array(image)
 
 # Get image dimensions
@@ -37,12 +37,10 @@ for i in range(num_tiles_y):
         x = j * SIZE
         y = i * SIZE
         # Extract the tile
-        tile = image_np[y:y+SIZE, x:x+SIZE]
+        tile = image_np[y : y + SIZE, x : x + SIZE]
         # Save the tile
         tile_image = Image.fromarray(tile)
-        tile_image.save(os.path.join(output_dir, f'{tile_count}_{x}_{y}.jpg'))
+        tile_image.save(os.path.join(output_dir, f"{tile_count}_{x}_{y}.jpg"))
         tile_count += 1
 
-print(f'Saved {tile_count} tiles in {output_dir}')
-
-
+print(f"Saved {tile_count} tiles in {output_dir}")
