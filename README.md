@@ -49,6 +49,7 @@ arcticlakecarbonprediction/
 
 ## Features
 
+- Predict lake boundaries
 - NDVI Calculation: Compute NDVI from red and near-infrared (NIR) satellite imagery bands.
 - Biomass Estimation: Apply empirical models to estimate vegetation biomass from NDVI.
 - Carbon Stock Calculation: Convert biomass estimates to carbon stock using standard conversion factors.
@@ -97,7 +98,8 @@ pip install -r requirements.txt
 - Obtain red and NIR bands for your area of interest.
 - Place the files in the data/raw/ directory.
 
-2. Calculate NDVI
+2. Predict lakes
+3. Calculate NDVI
 
 Run the NDVI calculation script:
 
@@ -155,25 +157,32 @@ Satellite Data Sources
 
 ## Methodology
 
-1. NDVI Calculation
+1. Predict lakes
+2. NDVI Calculation
 
 NDVI is calculated using the formula:
 
 - Purpose: NDVI indicates the presence and condition of vegetation.
 - Implementation: The calculate_ndvi.py script reads the red and NIR bands and computes NDVI for each pixel.
 
-2. Biomass Estimation
+3. Biomass Estimation
 
 - Model Used:
 - Parameters:
 - Coefficients a and b are derived from relevant studies or field data specific to Arctic vegetation.
 
-3. Carbon Stock Calculation
+4. Carbon Stock Calculation
 
-- Conversion: Carbon Stock = Biomass × Carbon Fraction
+- With NDVI - Use Conversion: Carbon Stock = Biomass × Carbon Fraction 
 - Carbon Fraction: Typically around 0.47 (i.e., 47% of biomass is carbon).
+- Basic carbon map from satellite-derived lake predictions
+	•	Calculate the area of each detected lake (in square meters or kilometers).
+	•	Using global estimates of Methane emissions: ~0.1–1.0 g CH₄/m²/day (varies by lake size, temperature, trophic status).
+	•	Sediment carbon sequestration: ~5–30 g C/m²/year (varies by lake type).
+	•	Assign average carbon flux or stock values to each lake area based on size, location, or type (see Raymond et al., 2013).
+	•	Carbon Flux Estimates: Derived from literature on lake emissions (e.g., Raymond et al., 2013; Bastviken et al., 2011)
 
-4. Data Visualization
+5. Data Visualization
 
 - Maps and Plots:
 - Generate spatial maps of NDVI and carbon stock.
