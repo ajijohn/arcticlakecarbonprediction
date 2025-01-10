@@ -4,8 +4,8 @@ import numpy as np
 import cv2
 from pathlib import Path
 
-root_dir = Path("newdata/json")
-output_dir = Path("newdata/masks")
+root_dir = Path("../newdata/json")
+output_dir = Path("../newdata/masks")
 
 
 def gen_mask_img(json_filename):
@@ -30,8 +30,8 @@ def gen_mask_img(json_filename):
 
     mask_img_filename = output_dir / f"{json_filename.stem}.jpg"
 
-    # save the mask
-    cv2.imwrite(str(mask_img_filename), mask)
+    # save the mask with the highest quality
+    cv2.imwrite(str(mask_img_filename), mask, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
     return mask_img_filename
 
