@@ -40,7 +40,9 @@ for i in range(num_tiles_y):
         tile = image_np[y : y + SIZE, x : x + SIZE]
         # Save the tile
         tile_image = Image.fromarray(tile)
-        tile_image.save(os.path.join(output_dir, f"{tile_count}_{x}_{y}.jpg"))
+        tile_image.save(
+            os.path.join(output_dir, f"{tile_count}_{x}_{y}.jpg"), quality=100
+        )
         tile_count += 1
 
 print(f"Saved {tile_count} tiles in {output_dir}")
