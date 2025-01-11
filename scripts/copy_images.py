@@ -2,10 +2,10 @@ import os
 import shutil
 
 # Define the directories
-images_dir = "newdata/images"
-masks_dir = "newdata/masks"
-destination_images_dir = "test/Water Bodies Dataset.1/Images"
-destination_masks_dir = "test/Water Bodies Dataset.1/Masks"
+images_dir = "../newdata/images"
+masks_dir = "../newdata/masks"
+destination_images_dir = "../test/Water Bodies Dataset.1/Images"
+destination_masks_dir = "../test/Water Bodies Dataset.1/Masks"
 
 # Create the destination directories if they don't exist
 os.makedirs(destination_images_dir, exist_ok=True)
