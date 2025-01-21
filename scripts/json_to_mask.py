@@ -26,6 +26,8 @@ def gen_mask_img(json_filename):
         points = np.array(
             shape["points"], dtype=np.int32
         )  # tips: points location must be int32
+        if points.shape[0] == 0:
+            continue
         cv2.fillPoly(mask, [points], (255, 255, 255))
 
     mask_img_filename = output_dir / f"{json_filename.stem}.jpg"
