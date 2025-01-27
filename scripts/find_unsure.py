@@ -3,7 +3,7 @@ from pathlib import Path
 # Define paths
 images_dir = Path("../newdata/images")
 masks_dir = Path("../newdata/masks")
-output_file = Path("../newdata/unsure.txt")
+output_file = Path("../newdata/unsure_images.txt")
 
 # Get list of image files
 image_files = [f.name for f in images_dir.iterdir() if f.is_file()]

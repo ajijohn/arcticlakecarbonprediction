@@ -1,13 +1,12 @@
-import os
+import cv2
 import json
 import numpy as np
-import cv2
 from pathlib import Path
 
 images_dir = Path("../newdata/images")
 json_dir = Path("../newdata/json")
 masks_dir = Path("../newdata/masks")
-unsure_file = Path("../newdata/unsure.txt")
+unsure_file = Path("../newdata/unsure_images.txt")
 
 
 def gen_mask_img(image_filename):
@@ -45,7 +44,7 @@ def main():
         unsure_files = set(line.strip() for line in f)
 
     for image_file in images_dir.rglob("*.*"):
-        if image_file.name not in unsure_files:
+        if image_file.stem not in unsure_files:
             print(f"{image_file} -> {gen_mask_img(image_file)}")
         else:
             print(f"Skipping {image_file} as it is listed in unsure.txt")
