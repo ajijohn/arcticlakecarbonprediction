@@ -1,56 +1,56 @@
 import os
 import shutil
 import random
+from pathlib import Path
 
-new_images_dir = "../newdata/images"
-new_masks_dir = "../newdata/masks"
-train_images_dir = "../test/training/Images"
-train_masks_dir = "../test/training/Masks"
-test_images_dir = "../test/testing/Images"
-test_masks_dir = "../test/testing/Masks"
+# Define the directories
+new_images_dir = Path("../newdata/images")
+new_json_dir = Path("../newdata/json")
+new_masks_dir = Path("../newdata/masks")
+train_images_dir = Path("../test/training/Images")
+train_masks_dir = Path("../test/training/Masks")
+test_images_dir = Path("../test/testing/Images")
+test_masks_dir = Path("../test/testing/Masks")
+test_images_file = Path("../newdata/test_images.txt")
+
+# Number of images to be used for testing
+N = 100
 
 # Create the destination directories if they don't exist
-os.makedirs(train_images_dir, exist_ok=True)
-os.makedirs(train_masks_dir, exist_ok=True)
-os.makedirs(test_images_dir, exist_ok=True)
-os.makedirs(test_masks_dir, exist_ok=True)
+train_images_dir.mkdir(parents=True, exist_ok=True)
+train_masks_dir.mkdir(parents=True, exist_ok=True)
+test_images_dir.mkdir(parents=True, exist_ok=True)
+test_masks_dir.mkdir(parents=True, exist_ok=True)
 
-# Get the list of new image files
-image_files = os.listdir(new_images_dir)
+# Get list of non-empty image/mask pairs
+json_files = [f for f in new_json_dir.iterdir() if f.is_file()]
 
-# Filter out images that do not have corresponding masks
-image_files = [f for f in image_files if os.path.exists(os.path.join(new_masks_dir, f))]
+# Check if test_images_file exists
+if not test_images_file.exists():
+    # Randomly pick N non-empty image/mask pairs
+    test_images = random.sample(json_files, N)
+    # Sort test images by the first number in their name
+    test_images.sort(key=lambda x: int(x.stem.split("_")[0]))
+    # Write test images to file
+    with open(test_images_file, "w") as f:
+        for json_file in test_images:
+            f.write(f"{json_file.stem}\n")
+else:
+    # Read test images from file
+    with open(test_images_file, "r") as f:
+        test_images = [new_json_dir / f"{line.strip()}.json" for line in f]
 
-# Shuffle the list to ensure randomness
-random.shuffle(image_files)
+# Copy test images and masks
+for json_file in test_images:
+    image_file = new_images_dir / f"{json_file.stem}.jpg"
+    mask_file = new_masks_dir / f"{json_file.stem}.jpg"
+    shutil.copy(image_file, test_images_dir / image_file.name)
+    shutil.copy(mask_file, test_masks_dir / mask_file.name)
 
-# Define the number of images to use for testing
-N = 100  # You can change this value as needed
-
-# Split the image files into test and train sets
-test_image_files = image_files[:N]
-train_image_files = image_files[N:]
-
-
-# Function to copy files
-def copy_files(
-    image_files, src_images_dir, src_masks_dir, dest_images_dir, dest_masks_dir
-):
-    for image_file in image_files:
-        mask_file = image_file  # Mask file has the same name as the image file
-        shutil.copy(os.path.join(src_images_dir, image_file), dest_images_dir)
-        shutil.copy(os.path.join(src_masks_dir, mask_file), dest_masks_dir)
-
-
-# Copy test files
-copy_files(
-    test_image_files, new_images_dir, new_masks_dir, test_images_dir, test_masks_dir
-)
-
-# Copy train files
-copy_files(
-    train_image_files, new_images_dir, new_masks_dir, train_images_dir, train_masks_dir
-)
-
-print(f"Copied {len(test_image_files)} files to testing directories.")
-print(f"Copied {len(train_image_files)} files to training directories.")
+# Copy remaining images and masks to training directory
+for json_file in json_files:
+    if json_file not in test_images:
+        image_file = new_images_dir / f"{json_file.stem}.jpg"
+        mask_file = new_masks_dir / f"{json_file.stem}.jpg"
+        shutil.copy(image_file, train_images_dir / image_file.name)
+        shutil.copy(mask_file, train_masks_dir / mask_file.name)
