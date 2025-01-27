@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 # Define paths
@@ -19,11 +18,11 @@ for image_file in image_files:
     if not mask_path.exists():
         missing_masks.append(image_file)
 
-# Write missing files to text file
+# Write missing files to text file without the file extension
 if missing_masks:
     with open(output_file, "w") as f:
         for filename in missing_masks:
-            f.write(f"{filename}\n")
+            f.write(f"{Path(filename).stem}\n")
     print(f"Found {len(missing_masks)} images without corresponding masks.")
     print(f"Missing mask filenames have been saved to {output_file}")
 else:
