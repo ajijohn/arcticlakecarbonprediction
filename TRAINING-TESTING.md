@@ -44,6 +44,12 @@ arcticlakecarbonprediction
 
 Verify that the correct images exist in all folders. `training` should contain both the old and new images, and `testing` should only contain the new images specified in `newdata/test_images.txt`.
 
+## Updating Data
+
+If there are any updates to the new data, the training and testing folders should be updated.
+
+Delete `test/training` and `test/testing`. Then, the process is the same as before: make a copy of `test/Water Bodies Dataset`, rename it to `training`, and finally run the `scripts/split_copy_images.py` script again.
+
 ## Training
 
 Run `notebooks/train.ipynb` to train a model. It will save it in the `models` folder.
