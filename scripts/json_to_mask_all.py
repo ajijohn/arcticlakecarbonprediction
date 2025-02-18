@@ -7,7 +7,7 @@ images_dir = Path("../newdata/images")
 json_dir = Path("../newdata/json")
 masks_dir = Path("../newdata/masks")
 unsure_file = Path("../newdata/unsure_images.txt")
-limit = 865
+limit = 900
 
 
 def gen_mask_img(image_filename):
@@ -51,7 +51,6 @@ def main():
 
     for image_file in image_files:
         image_number = int(image_file.stem.split("_")[0])
-        print(image_number)
         if image_number > limit:
             break
         if image_file.stem not in unsure_files:
