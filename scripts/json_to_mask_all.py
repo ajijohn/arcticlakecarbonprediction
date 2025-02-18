@@ -7,6 +7,7 @@ images_dir = Path("../newdata/images")
 json_dir = Path("../newdata/json")
 masks_dir = Path("../newdata/masks")
 unsure_file = Path("../newdata/unsure_images.txt")
+limit = 865
 
 
 def gen_mask_img(image_filename):
@@ -39,11 +40,20 @@ def gen_mask_img(image_filename):
 def main():
     masks_dir.mkdir(parents=True, exist_ok=True)
 
-    # Read unsure file
+    # read unsure file
     with open(unsure_file, "r") as f:
         unsure_files = set(line.strip() for line in f)
 
-    for image_file in images_dir.rglob("*.*"):
+    # sort by number
+    image_files = sorted(
+        images_dir.rglob("*.*"), key=lambda x: int(x.stem.split("_")[0])
+    )
+
+    for image_file in image_files:
+        image_number = int(image_file.stem.split("_")[0])
+        print(image_number)
+        if image_number > limit:
+            break
         if image_file.stem not in unsure_files:
             print(f"{image_file} -> {gen_mask_img(image_file)}")
         else:
