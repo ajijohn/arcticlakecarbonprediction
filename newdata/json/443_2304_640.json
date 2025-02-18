@@ -1,0 +1,68 @@
+{
+  "version": "5.5.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "1",
+      "points": [
+        [
+          57.0,
+          127.0
+        ],
+        [
+          43.0,
+          127.0
+        ],
+        [
+          42.5,
+          127.0
+        ],
+        [
+          47.5,
+          123.0
+        ],
+        [
+          47.5,
+          122.0
+        ],
+        [
+          49.5,
+          120.0
+        ],
+        [
+          49.5,
+          119.0
+        ],
+        [
+          52.0,
+          116.5
+        ],
+        [
+          56.5,
+          121.0
+        ],
+        [
+          56.5,
+          122.0
+        ],
+        [
+          57.5,
+          123.0
+        ],
+        [
+          57.5,
+          127.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "../images/443_2304_640.jpg",
+  "imageData": "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",
+  "imageHeight": 128,
+  "imageWidth": 128
+}
