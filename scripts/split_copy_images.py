@@ -1,4 +1,3 @@
-import os
 import shutil
 import random
 from pathlib import Path
@@ -7,10 +6,13 @@ from pathlib import Path
 new_images_dir = Path("../newdata/images")
 new_json_dir = Path("../newdata/json")
 new_masks_dir = Path("../newdata/masks")
-train_images_dir = Path("../test/training/Images")
-train_masks_dir = Path("../test/training/Masks")
-test_images_dir = Path("../test/testing/Images")
-test_masks_dir = Path("../test/testing/Masks")
+train_images_dir = Path("../temp/training/Images")
+train_masks_dir = Path("../temp/training/Masks")
+test_images_dir = Path("../temp/testing/Images")
+test_masks_dir = Path("../temp/testing/Masks")
+supplement_images_dir = Path("../temp/Water Bodies Dataset/Images")
+supplement_masks_dir = Path("../temp/Water Bodies Dataset/Masks")
+
 test_images_file = Path("../newdata/test_images.txt")
 
 # Number of images to be used for testing
@@ -21,6 +23,12 @@ train_images_dir.mkdir(parents=True, exist_ok=True)
 train_masks_dir.mkdir(parents=True, exist_ok=True)
 test_images_dir.mkdir(parents=True, exist_ok=True)
 test_masks_dir.mkdir(parents=True, exist_ok=True)
+
+# Delete all files in /testing and /training
+for directory in [train_images_dir, train_masks_dir, test_images_dir, test_masks_dir]:
+    for file in directory.iterdir():
+        if file.is_file():
+            file.unlink()
 
 # Get list of non-empty image/mask pairs
 json_files = [f for f in new_json_dir.iterdir() if f.is_file()]
@@ -54,3 +62,11 @@ for json_file in json_files:
         mask_file = new_masks_dir / f"{json_file.stem}.jpg"
         shutil.copy(image_file, train_images_dir / image_file.name)
         shutil.copy(mask_file, train_masks_dir / mask_file.name)
+
+# Copy supplement images and masks to training directory
+for image_file in supplement_images_dir.iterdir():
+    if image_file.is_file():
+        mask_file = supplement_masks_dir / image_file.name
+        if mask_file.exists():
+            shutil.copy(image_file, train_images_dir / image_file.name)
+            shutil.copy(mask_file, train_masks_dir / mask_file.name)

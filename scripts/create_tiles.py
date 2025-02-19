@@ -5,7 +5,7 @@ import cv2 as cv
 from PIL import Image
 import matplotlib.pyplot as plt
 
-image_path = "../test/sentinel2_visual.tif"
+image_path = "../temp/sentinel2_visual.tif"
 output_dir = "../newdata/images"
 SIZE = 128
 COUNT = 1200

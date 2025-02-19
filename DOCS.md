@@ -1,6 +1,8 @@
-# Labeling Process
+# Documentation
 
-## Setup
+## Labeling
+
+### Setup
 
 Install Labelme:
 
@@ -23,8 +25,6 @@ with checkmarks are images that have been labeled.
 
 Use the file list or "Prev Image"/"Next Image" to navigate to an unlabeled image.
 
-## Labeling
-
 ### AI Polygons
 
 Make sure the "AI Model" is set to "EfficientSam (accuracy)". Click "Edit" > "Create AI-Polygon" to begin creating an AI polygon.
@@ -45,12 +45,70 @@ For larger, more oddly shaped lakes, it can often be effective to create multipl
 
 If it is hard to tell whether something is a lake or not, viewing the [full image](https://drive.google.com/file/d/1adtjKAnc-Lfhgf7AT6I-UqnRaY8zfYPp/view) may help with providing a better view, since it is sharper and you can see the surrounding context. The last two number of the name of the tile denote its coordinates in the full image.
 
-## Saving
+### Saving
 
 Once all the lakes in an image are labeled, press Ctrl+S. In the "Choose File" window, just press Enter to save.
 
-## Skipping
+### Skipping
 
 If you are sure an image has no lakes, skip it and do not save any masks. This will result in an empty mask being generated later on by the conversion script.
 
 If you are unsure about an image and want to exclude it from the data, add the image name to the `unsure.txt` file. This will prevent any masks from being generated for that image.
+
+## Training
+
+### Setup
+
+Create a folder in the project directory called `temp`. This folder is ignored in git.
+
+Download `Water Bodies Dataset.zip` from the Google Drive. Unzip the folder and move it to `temp`. The folder structure should look like this:
+
+```
+arcticlakecarbonprediction
+└── temp
+    └── Water Bodies Dataset
+        ├── Images
+        └── Masks
+```
+
+Run `scripts/split_copy_images.py`. This script will:
+
+1. Create the folders `temp/training` and `temp/testing` if they don't exist and delete all files in them.
+2. Copy the newdata test images/masks (specified in `newdata/test_images.txt`) from `newdata` to `temp/testing`
+3. Copy the remaining newdata images/masks to `temp/training`.
+4. Copy the `Water Bodies Dataset` images/masks to `temp/training`.
+
+```bash
+cd scripts
+python split_copy_images.py
+```
+
+The folder structure should now look like this:
+
+```
+arcticlakecarbonprediction
+└── temp
+    ├── Water Bodies Dataset
+    │   ├── Images
+    │   └── Masks
+    ├── training
+    │   ├── Images
+    │   └── Masks
+    └── testing
+        ├── Images
+        └── Masks
+```
+
+Verify that the correct images exist in all folders. `temp/training` should contain both the old and new images, and `temp/testing` should only contain the test images specified in `newdata/test_images.txt`.
+
+### Updating Data
+
+If there are any updates to the new data, the training and testing folders should be updated. Simply run the `scripts/split_copy_images.py` script again.
+
+### Actually Training
+
+Run `notebooks/train.ipynb` to train a model. It will save it in the `models` folder.
+
+## Testing
+
+Run `notebooks/test.ipynb` to test a model. You can specify the model path inside the notebook.
