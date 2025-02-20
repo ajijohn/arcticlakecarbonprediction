@@ -1,0 +1,140 @@
+{
+  "version": "5.6.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "1",
+      "points": [
+        [
+          33.1588785046729,
+          107.73831775700934
+        ],
+        [
+          32.22429906542057,
+          104.37383177570094
+        ],
+        [
+          36.149532710280376,
+          101.75700934579439
+        ],
+        [
+          36.149532710280376,
+          101.75700934579439
+        ],
+        [
+          41.943925233644855,
+          97.64485981308411
+        ],
+        [
+          41.196261682243,
+          102.3177570093458
+        ],
+        [
+          38.57943925233645,
+          104.5607476635514
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          52.22429906542056,
+          89.23364485981308
+        ],
+        [
+          50.16822429906542,
+          89.04672897196262
+        ],
+        [
+          47.17757009345795,
+          89.04672897196262
+        ],
+        [
+          48.11214953271028,
+          92.03738317757009
+        ],
+        [
+          50.54205607476636,
+          92.97196261682244
+        ],
+        [
+          54.84112149532711,
+          92.03738317757009
+        ],
+        [
+          54.84112149532711,
+          90.35514018691589
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          70.16822429906543,
+          94.46728971962617
+        ],
+        [
+          68.11214953271028,
+          98.01869158878505
+        ],
+        [
+          63.252336448598136,
+          100.44859813084112
+        ],
+        [
+          67.3644859813084,
+          103.81308411214954
+        ],
+        [
+          72.22429906542055,
+          106.24299065420561
+        ],
+        [
+          78.39252336448598,
+          107.3644859813084
+        ],
+        [
+          78.01869158878503,
+          104.74766355140187
+        ],
+        [
+          79.14018691588785,
+          100.44859813084112
+        ],
+        [
+          79.70093457943926,
+          98.57943925233646
+        ],
+        [
+          77.27102803738319,
+          97.08411214953271
+        ],
+        [
+          74.2803738317757,
+          95.96261682242991
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "../images/964_3712_1408.jpg",
+  "imageData": "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",
+  "imageHeight": 128,
+  "imageWidth": 128
+}
