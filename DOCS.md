@@ -55,6 +55,16 @@ If you are sure an image has no lakes, skip it and do not save any masks. This w
 
 If you are unsure about an image and want to exclude it from the data, add the image name to the `unsure.txt` file. This will prevent any masks from being generated for that image.
 
+### Converting
+
+To convert the Labelme JSON files to mask images, run `scripts/json_to_mask.py`.
+
+Make sure to set the`limit` variable to the current number of lakes (inclusive) that have been labeled.
+
+```bash
+python scripts/json_to_mask.py
+```
+
 ## Training
 
 ### Setup
@@ -71,7 +81,7 @@ arcticlakecarbonprediction
         └── Masks
 ```
 
-Run `scripts/split_copy_images.py`. This script will:
+Run `scripts/split_copy_images.py`. This script will perform the following actions:
 
 1. Create the folders `temp/training` and `temp/testing` if they don't exist and delete all files in them.
 2. Copy the newdata test images/masks (specified in `newdata/test_images.txt`) from `newdata` to `temp/testing`
@@ -79,8 +89,7 @@ Run `scripts/split_copy_images.py`. This script will:
 4. Copy the `Water Bodies Dataset` images/masks to `temp/training`.
 
 ```bash
-cd scripts
-python split_copy_images.py
+python scripts/split_copy_images.py
 ```
 
 The folder structure should now look like this:
@@ -111,4 +120,4 @@ Run `notebooks/train.ipynb` to train a model. It will save it in the `models` fo
 
 ## Testing
 
-Run `notebooks/test.ipynb` to test a model. You can specify the model path inside the notebook.
+Run `notebooks/test.ipynb` to test a model. You will need to specify the correct model path inside the notebook.
