@@ -7,7 +7,7 @@ images_dir = Path("../newdata/images")
 json_dir = Path("../newdata/json")
 masks_dir = Path("../newdata/masks")
 unsure_file = Path("../newdata/unsure_images.txt")
-limit = 900
+limit = 1199
 
 
 def gen_mask_img(image_filename):
