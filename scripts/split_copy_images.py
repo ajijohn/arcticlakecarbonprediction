@@ -2,18 +2,21 @@ import shutil
 import random
 from pathlib import Path
 
-# Define the directories
-new_images_dir = Path("../newdata/images")
-new_json_dir = Path("../newdata/json")
-new_masks_dir = Path("../newdata/masks")
-train_images_dir = Path("../temp/training/Images")
-train_masks_dir = Path("../temp/training/Masks")
-test_images_dir = Path("../temp/testing/Images")
-test_masks_dir = Path("../temp/testing/Masks")
-supplement_images_dir = Path("../temp/Water Bodies Dataset/Images")
-supplement_masks_dir = Path("../temp/Water Bodies Dataset/Masks")
+# Get the directory of the current script
+script_dir = Path(__file__).parent
 
-test_images_file = Path("../newdata/test_images.txt")
+# Define the directories relative to the script directory
+new_images_dir = script_dir / "../newdata/images"
+new_json_dir = script_dir / "../newdata/json"
+new_masks_dir = script_dir / "../newdata/masks"
+train_images_dir = script_dir / "../temp/training/Images"
+train_masks_dir = script_dir / "../temp/training/Masks"
+test_images_dir = script_dir / "../temp/testing/Images"
+test_masks_dir = script_dir / "../temp/testing/Masks"
+supplement_images_dir = script_dir / "../temp/Water Bodies Dataset/Images"
+supplement_masks_dir = script_dir / "../temp/Water Bodies Dataset/Masks"
+
+test_images_file = script_dir / "../newdata/test_images.txt"
 
 # Number of images to be used for testing
 N = 100
