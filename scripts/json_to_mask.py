@@ -3,10 +3,15 @@ import json
 import numpy as np
 from pathlib import Path
 
-images_dir = Path("../newdata/images")
-json_dir = Path("../newdata/json")
-masks_dir = Path("../newdata/masks")
-unsure_file = Path("../newdata/unsure_images.txt")
+# Get the directory of the current script
+script_dir = Path(__file__).parent
+
+# Define the directories relative to the script directory
+images_dir = script_dir / "../newdata/images"
+json_dir = script_dir / "../newdata/json"
+masks_dir = script_dir / "../newdata/masks"
+unsure_file = script_dir / "../newdata/unsure_images.txt"
+
 limit = 1199
 
 
