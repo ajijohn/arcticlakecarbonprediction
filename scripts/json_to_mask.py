@@ -45,9 +45,8 @@ def gen_mask_img(image_filename):
 def main():
     masks_dir.mkdir(parents=True, exist_ok=True)
 
-    # read unsure file
     with open(unsure_file, "r") as f:
-        unsure_files = set(line.strip() for line in f)
+        unsure_numbers = set(line.strip() for line in f)
 
     # sort by number
     image_files = sorted(
@@ -58,10 +57,12 @@ def main():
         image_number = int(image_file.stem.split("_")[0])
         if image_number > limit:
             break
-        if image_file.stem not in unsure_files:
+        if str(image_number) not in unsure_numbers:
             print(f"{image_file} -> {gen_mask_img(image_file)}")
         else:
-            print(f"Skipping {image_file} as it is listed in unsure.txt")
+            print(
+                f"Skipping {image_file} as number {image_number} is listed in unsure_images.txt"
+            )
 
 
 if __name__ == "__main__":

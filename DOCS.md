@@ -53,7 +53,7 @@ Once all the lakes in an image are labeled, press Ctrl+S. In the "Choose File" w
 
 If you are sure an image has no lakes, skip it and do not save any masks. This will result in an empty mask being generated later on by the conversion script.
 
-If you are unsure about an image and want to exclude it from the data, add the image name to the `unsure.txt` file. This will prevent any masks from being generated for that image.
+If you are unsure about an image and want to exclude it from the data, add the image number to the `unsure_images.txt` file. This will prevent any masks from being generated for that image.
 
 ### Converting
 
