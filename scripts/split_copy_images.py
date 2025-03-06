@@ -55,16 +55,37 @@ else:
 for json_file in test_images:
     image_file = new_images_dir / f"{json_file.stem}.jpg"
     mask_file = new_masks_dir / f"{json_file.stem}.jpg"
-    shutil.copy(image_file, test_images_dir / image_file.name)
-    shutil.copy(mask_file, test_masks_dir / mask_file.name)
+
+    # Check if files exist before copying
+    if image_file.exists():
+        shutil.copy(image_file, test_images_dir / image_file.name)
+    else:
+        print(f"Warning: Test image not found: {image_file}")
+
+    if mask_file.exists():
+        shutil.copy(mask_file, test_masks_dir / mask_file.name)
+    else:
+        print(f"Warning: Test mask not found: {mask_file}")
+
+mask_files = [f for f in new_masks_dir.iterdir() if f.is_file()]
+test_image_stems = {json_file.stem for json_file in test_images}
 
 # Copy remaining images and masks to training directory
-for json_file in json_files:
-    if json_file not in test_images:
-        image_file = new_images_dir / f"{json_file.stem}.jpg"
-        mask_file = new_masks_dir / f"{json_file.stem}.jpg"
-        shutil.copy(image_file, train_images_dir / image_file.name)
-        shutil.copy(mask_file, train_masks_dir / mask_file.name)
+for mask_file in mask_files:
+    if mask_file.stem not in test_image_stems:
+        image_file = new_images_dir / f"{mask_file.stem}.jpg"
+        mask_file = new_masks_dir / f"{mask_file.stem}.jpg"
+
+        # Check if files exist before copying
+        if image_file.exists():
+            shutil.copy(image_file, train_images_dir / image_file.name)
+        else:
+            print(f"Warning: Training image not found: {image_file}")
+
+        if mask_file.exists():
+            shutil.copy(mask_file, train_masks_dir / mask_file.name)
+        else:
+            print(f"Warning: Training mask not found: {mask_file}")
 
 # Copy supplement images and masks to training directory
 for image_file in supplement_images_dir.iterdir():
