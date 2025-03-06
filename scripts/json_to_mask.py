@@ -12,7 +12,7 @@ json_dir = script_dir / "../newdata/json"
 masks_dir = script_dir / "../newdata/masks"
 unsure_file = script_dir / "../newdata/unsure_images.txt"
 
-limit = 1199
+limit = 1799
 
 
 def gen_mask_img(image_filename):
