@@ -19,7 +19,7 @@ supplement_masks_dir = script_dir / "../temp/Water Bodies Dataset/Masks"
 test_images_file = script_dir / "../newdata/test_images.txt"
 
 # Number of images to be used for testing
-N = 100
+N = 200
 
 # Create the destination directories if they don't exist
 train_images_dir.mkdir(parents=True, exist_ok=True)
