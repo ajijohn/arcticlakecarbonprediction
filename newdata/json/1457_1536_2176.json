@@ -1,0 +1,202 @@
+{
+  "version": "5.5.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "1",
+      "points": [
+        [
+          49.0,
+          86.5
+        ],
+        [
+          46.0,
+          86.5
+        ],
+        [
+          44.5,
+          85.0
+        ],
+        [
+          44.5,
+          84.0
+        ],
+        [
+          43.5,
+          83.0
+        ],
+        [
+          43.5,
+          76.0
+        ],
+        [
+          44.5,
+          75.0
+        ],
+        [
+          44.5,
+          73.0
+        ],
+        [
+          45.5,
+          72.0
+        ],
+        [
+          45.5,
+          71.0
+        ],
+        [
+          46.5,
+          70.0
+        ],
+        [
+          46.5,
+          69.0
+        ],
+        [
+          48.0,
+          67.5
+        ],
+        [
+          49.0,
+          67.5
+        ],
+        [
+          51.0,
+          65.5
+        ],
+        [
+          52.0,
+          65.5
+        ],
+        [
+          53.0,
+          64.5
+        ],
+        [
+          55.0,
+          64.5
+        ],
+        [
+          56.0,
+          63.5
+        ],
+        [
+          57.0,
+          63.5
+        ],
+        [
+          58.0,
+          64.5
+        ],
+        [
+          59.0,
+          64.5
+        ],
+        [
+          59.5,
+          65.0
+        ],
+        [
+          59.5,
+          68.0
+        ],
+        [
+          58.5,
+          69.0
+        ],
+        [
+          58.5,
+          70.0
+        ],
+        [
+          56.5,
+          72.0
+        ],
+        [
+          56.5,
+          73.0
+        ],
+        [
+          53.5,
+          76.0
+        ],
+        [
+          53.5,
+          77.0
+        ],
+        [
+          52.5,
+          78.0
+        ],
+        [
+          52.5,
+          82.0
+        ],
+        [
+          51.5,
+          83.0
+        ],
+        [
+          51.5,
+          85.0
+        ],
+        [
+          51.0,
+          85.5
+        ],
+        [
+          50.0,
+          85.5
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          63.0,
+          65.5
+        ],
+        [
+          62.0,
+          65.5
+        ],
+        [
+          61.5,
+          65.0
+        ],
+        [
+          61.5,
+          64.0
+        ],
+        [
+          63.0,
+          62.5
+        ],
+        [
+          63.5,
+          63.0
+        ],
+        [
+          63.5,
+          65.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "../images/1457_1536_2176.jpg",
+  "imageData": "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",
+  "imageHeight": 128,
+  "imageWidth": 128
+}
