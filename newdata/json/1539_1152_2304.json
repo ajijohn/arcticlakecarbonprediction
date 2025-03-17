@@ -1,0 +1,406 @@
+{
+  "version": "5.5.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "1",
+      "points": [
+        [
+          64.0,
+          87.5
+        ],
+        [
+          62.5,
+          86.0
+        ],
+        [
+          62.5,
+          82.0
+        ],
+        [
+          62.0,
+          81.5
+        ],
+        [
+          60.0,
+          81.5
+        ],
+        [
+          59.0,
+          80.5
+        ],
+        [
+          58.0,
+          80.5
+        ],
+        [
+          56.5,
+          79.0
+        ],
+        [
+          56.5,
+          69.0
+        ],
+        [
+          58.0,
+          67.5
+        ],
+        [
+          65.0,
+          67.5
+        ],
+        [
+          65.5,
+          68.0
+        ],
+        [
+          65.5,
+          76.0
+        ],
+        [
+          64.5,
+          77.0
+        ],
+        [
+          64.5,
+          80.0
+        ],
+        [
+          65.5,
+          81.0
+        ],
+        [
+          65.5,
+          82.0
+        ],
+        [
+          67.5,
+          84.0
+        ],
+        [
+          67.5,
+          85.0
+        ],
+        [
+          66.0,
+          86.5
+        ],
+        [
+          65.0,
+          86.5
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          25.0,
+          104.5
+        ],
+        [
+          23.0,
+          104.5
+        ],
+        [
+          22.5,
+          104.0
+        ],
+        [
+          22.5,
+          103.0
+        ],
+        [
+          23.5,
+          102.0
+        ],
+        [
+          23.5,
+          100.0
+        ],
+        [
+          24.5,
+          99.0
+        ],
+        [
+          24.5,
+          98.0
+        ],
+        [
+          29.0,
+          93.5
+        ],
+        [
+          30.5,
+          95.0
+        ],
+        [
+          27.5,
+          98.0
+        ],
+        [
+          27.5,
+          100.0
+        ],
+        [
+          26.5,
+          101.0
+        ],
+        [
+          26.5,
+          103.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          16.0,
+          102.5
+        ],
+        [
+          14.5,
+          101.0
+        ],
+        [
+          15.0,
+          100.5
+        ],
+        [
+          16.0,
+          100.5
+        ],
+        [
+          16.5,
+          101.0
+        ],
+        [
+          16.5,
+          102.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          37.0,
+          72.5
+        ],
+        [
+          36.0,
+          72.5
+        ],
+        [
+          35.5,
+          72.0
+        ],
+        [
+          35.5,
+          64.0
+        ],
+        [
+          36.0,
+          63.5
+        ],
+        [
+          37.0,
+          63.5
+        ],
+        [
+          38.0,
+          62.5
+        ],
+        [
+          40.0,
+          62.5
+        ],
+        [
+          40.5,
+          63.0
+        ],
+        [
+          40.5,
+          67.0
+        ],
+        [
+          39.5,
+          68.0
+        ],
+        [
+          39.5,
+          69.0
+        ],
+        [
+          38.5,
+          70.0
+        ],
+        [
+          38.5,
+          71.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          37.0,
+          21.5
+        ],
+        [
+          36.0,
+          21.5
+        ],
+        [
+          32.5,
+          18.0
+        ],
+        [
+          32.5,
+          13.0
+        ],
+        [
+          34.0,
+          11.5
+        ],
+        [
+          36.0,
+          11.5
+        ],
+        [
+          37.0,
+          10.5
+        ],
+        [
+          39.0,
+          10.5
+        ],
+        [
+          40.0,
+          9.5
+        ],
+        [
+          45.0,
+          9.5
+        ],
+        [
+          45.5,
+          10.0
+        ],
+        [
+          45.5,
+          12.0
+        ],
+        [
+          45.0,
+          12.5
+        ],
+        [
+          43.0,
+          12.5
+        ],
+        [
+          42.5,
+          13.0
+        ],
+        [
+          42.5,
+          14.0
+        ],
+        [
+          41.5,
+          15.0
+        ],
+        [
+          41.5,
+          19.0
+        ],
+        [
+          41.0,
+          19.5
+        ],
+        [
+          40.0,
+          19.5
+        ],
+        [
+          39.0,
+          20.5
+        ],
+        [
+          38.0,
+          20.5
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "1",
+      "points": [
+        [
+          56.11324570273004,
+          17.48837209302326
+        ],
+        [
+          55.0,
+          17.5
+        ],
+        [
+          53.5,
+          16.0
+        ],
+        [
+          55.0,
+          14.5
+        ],
+        [
+          56.012133468149656,
+          14.556117290192116
+        ],
+        [
+          56.51769464105158,
+          15.263902932254805
+        ],
+        [
+          56.51769464105158,
+          16.5783619817998
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "polygon",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "../images/1539_1152_2304.jpg",
+  "imageData": "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",
+  "imageHeight": 128,
+  "imageWidth": 128
+}
