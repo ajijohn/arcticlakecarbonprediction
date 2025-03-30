@@ -19,7 +19,7 @@ supplement_masks_dir = script_dir / "../temp/Water Bodies Dataset/Masks"
 test_images_file = script_dir / "../newdata/test_images.txt"
 
 # Number of images to be used for testing
-N = 200
+test_num = 200
 
 # Create the destination directories if they don't exist
 train_images_dir.mkdir(parents=True, exist_ok=True)
@@ -39,7 +39,7 @@ json_files = [f for f in new_json_dir.iterdir() if f.is_file()]
 # Check if test_images_file exists
 if not test_images_file.exists():
     # Randomly pick N non-empty image/mask pairs
-    test_images = random.sample(json_files, N)
+    test_images = random.sample(json_files, test_num)
     # Sort test images by the first number in their name
     test_images.sort(key=lambda x: int(x.stem.split("_")[0]))
     # Write test images to file
