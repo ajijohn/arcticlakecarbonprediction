@@ -81,16 +81,12 @@ arcticlakecarbonprediction
         └── Masks
 ```
 
-Run `scripts/split_copy_images.py`. This script will perform the following actions:
+Run `notebooks/setup.ipynb`. This will perform the following actions:
 
 1. Create the folders `temp/training` and `temp/testing` if they don't exist and delete all files in them.
 2. Copy the newdata test images/masks (specified in `newdata/test_images.txt`) from `newdata` to `temp/testing`
 3. Copy the remaining newdata images/masks to `temp/training`.
 4. Copy the `Water Bodies Dataset` images/masks to `temp/training`.
-
-```bash
-python scripts/split_copy_images.py
-```
 
 The folder structure should now look like this:
 
