@@ -108,7 +108,7 @@ Verify that the correct images exist in all folders. `temp/training` should cont
 
 ### Updating Data
 
-If there are any updates to the new data, the training and testing folders should be updated. Simply run the `scripts/split_copy_images.py` script again.
+If there are any updates to the new data, the training and testing folders should be updated. Simply run `notebooks/setup.ipynb` again.
 
 ### Actually Training
 
