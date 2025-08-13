@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 image_path = "../temp/sentinel2_visual.tif"
 output_dir = "../newdata/images"
 SIZE = 128
-COUNT = 1800
+COUNT = 2000
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
